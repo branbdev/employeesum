@@ -51,4 +51,4 @@ npm test
 
 ![GitHub Avatar](https://avatars0.githubusercontent.com/u/58519368?v=4)
 
-If you have any questions about the repo, open an issue or contact [Redshreds](https://api.github.com/users/Redshreds) directly at null.
+If you have any questions about the repo, open an issue or contact [Redshreds](https://api.github.com/users/Redshreds) directly at brandonbowen999@gmail.com.
