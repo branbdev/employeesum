@@ -1,0 +1,28 @@
+{
+  "name": "employeesum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Redshreds/employeesum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Redshreds/employeesum/issues"
+  },
+  "homepage": "https://github.com/Redshreds/employeesum#readme",
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "jest": "^25.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
