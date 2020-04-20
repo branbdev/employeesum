@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-content">
                     <span class="card-title">
-                        <h4 class="align-center">{{ Name }}</h4>
+                        <h4 class="align-center">{{ name }}</h4>
                     </span>
                     <h5 class="align-center"><span class="material-icons">
                             code
@@ -13,20 +13,20 @@
                 <div class="card-tabs">
                     <ul class="tabs tabs-width-fixed">
                         <li class="tab">
-                            <a href="#tab1">ID</a>
+                            <a href="#enTab1">ID</a>
                         </li>
                         <li class="tab">
-                            <a href="#tab2">Email</a>
+                            <a href="#enTab2">Email</a>
                         </li>
                         <li class="tab">
-                            <a href="#tab3">Github</a>
+                            <a href="#enTab3">Github</a>
                         </li>
                     </ul>
                 </div>
                 <div class="card-content">
-                    <div id="tab1">{{ id }}</div>
-                    <div id="tab2"><a href="mailto:{{ email }}">{{ email }}</a></div>
-                    <div id="tab3"><a href="https://github.com/{{ github }}" target="_blank"
+                    <div id="enTab1">{{ id }}</div>
+                    <div id="enTab2"><a href="mailto:{{ email }}">{{ email }}</a></div>
+                    <div id="enTab3"><a href="https://github.com/{{ github }}" target="_blank"
                             rel="noopener noreferrer">{{ github }}</a></div>
                 </div>
             </div>

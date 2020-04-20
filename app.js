@@ -33,8 +33,11 @@ function createRoster() {
                     addIntern();
                     break;
                 case "Roster is full!":
-                    render(roster);
-                    break
+                    function renderHTML() {
+                        render(roster)
+                    };
+                    writeToFile(render(roster));
+                    break;
             }
         })
 
@@ -65,13 +68,16 @@ function createRoster() {
                     message: "What is your office number?"
                 }
 
-            ]).then(userChoice => {
-                console.log(userChoice);
-                const manager = new Manager(userChoice.managerName, userChoice.managerID, userChoice.managerEmail, userChoice.officeNumber)
+            ]).then(memberChoice => {
+                console.log(memberChoice);
+                const manager = new Manager(memberChoice.managerName, memberChoice.managerID, memberChoice.managerEmail, memberChoice.officeNumber)
 
                 roster.push(manager)
 
                 createRoster();
+            }).catch(err => {
+                console.log('Couldn\'t add teammate!')
+                process.exit(1);
             })
     }
 
@@ -102,13 +108,16 @@ function createRoster() {
                     message: "What is your Github username?"
                 }
 
-            ]).then(userChoice => {
-                console.log(userChoice);
-                const engineer = new Engineer(userChoice.engineerName, userChoice.engineerID, userChoice.engineerEmail, userChoice.github)
+            ]).then(memberChoice => {
+                console.log(memberChoice);
+                const engineer = new Engineer(memberChoice.engineerName, memberChoice.engineerID, memberChoice.engineerEmail, memberChoice.github)
 
                 roster.push(engineer)
 
                 createRoster();
+            }).catch(err => {
+                console.log("Couldn't add teammate!")
+                process.exit(1);
             })
     }
 
@@ -139,17 +148,31 @@ function createRoster() {
                     message: "Where did you graduate?"
                 }
 
-            ]).then(userChoice => {
-                console.log(userChoice);
-                const intern = new Intern(userChoice.internName, userChoice.internID, userChoice.internEmail, userChoice.school)
+            ]).then(memberChoice => {
+                console.log(memberChoice);
+                const intern = new Intern(memberChoice.internName, memberChoice.internID, memberChoice.internEmail, memberChoice.school)
 
                 roster.push(intern)
 
                 createRoster();
+            }).catch(err => {
+                console.log("Couldn't add teammate!")
+                process.exit(1);
             })
     }
 
-}
+
+    function writeToFile(data) {
+        return fs.writeFile(outputPath, data, function (error) {
+            if (error) {
+                console.log(error)
+                return;
+            }
+
+            console.log("Information completed!")
+        });
+    }
+};
 
 module.exports = roster;
 
